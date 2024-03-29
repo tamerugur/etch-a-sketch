@@ -37,7 +37,10 @@ cells.forEach(cell => {
 })
 
 button.addEventListener("mouseenter", () =>{
-        button.style.backgroundColor = "#d5bee9";
+        button.style.backgroundColor = "#bc97db";
+});
+button.addEventListener("mouseleave", () =>{
+        button.style.backgroundColor = "#9f6dc8";
 });
 
 function setUpGrid() {
