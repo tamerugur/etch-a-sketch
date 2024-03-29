@@ -8,3 +8,11 @@ for (let i = 0; i < 256; i++) {
 
 const header = document.querySelector("#header");
 header.textContent = "etch-a-sketch!"
+
+const cells = document.querySelectorAll(".cell");
+
+cells.forEach(cell => {
+        cell.addEventListener("mouseover", () =>{
+                cell.style.backgroundColor = "black";
+        });
+})
