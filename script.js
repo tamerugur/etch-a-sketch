@@ -1,18 +1,45 @@
-var container = document.querySelector("#container");
+const container = document.querySelector("#container");
+const button = document.querySelector("button");
+const header = document.createElement("div");
+const grids = document.createElement("div");
+
+
+button.textContent = "change number of grids";
+header.textContent = "etch-a-sketch!"
+
+header.classList.add("header");
+grids.classList.add("grids");
+button.classList.add("but");
+
+container.appendChild(header);
+container.appendChild(grids);
 
 for (let i = 0; i < 256; i++) {
         const cell = document.createElement("div");
+        cell.style.width = "50px"
+        cell.style.height = "50px"
         cell.classList.add("cell");
-        container.appendChild(cell);
+        grids.appendChild(cell);
 }
-
-const header = document.querySelector("#header");
-header.textContent = "etch-a-sketch!"
 
 const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell => {
-        cell.addEventListener("mouseover", () =>{
+        cell.addEventListener("mouseenter", () =>{
                 cell.style.backgroundColor = "black";
         });
 })
+
+cells.forEach(cell => {
+        cell.addEventListener("mouseleave", () =>{
+                cell.style.backgroundColor = "#834eab";
+        });
+})
+
+button.addEventListener("mouseenter", () =>{
+        button.style.backgroundColor = "#d5bee9";
+});
+
+function setUpGrid() {
+
+}
